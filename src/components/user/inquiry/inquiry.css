@@ -1,0 +1,14 @@
+.inquiry_contaciner
+{
+    /* margin-top: 60px; */
+    padding : 60px 0px;
+    background: hsla(13, 93%, 67%, 1);
+
+    background: linear-gradient(90deg, hsla(13, 93%, 67%, 1) 0%, hsla(21, 91%, 73%, 1) 100%);
+    
+    background: -moz-linear-gradient(90deg, hsla(13, 93%, 67%, 1) 0%, hsla(21, 91%, 73%, 1) 100%);
+    
+    background: -webkit-linear-gradient(90deg, hsla(13, 93%, 67%, 1) 0%, hsla(21, 91%, 73%, 1) 100%);
+    
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F97D5B", endColorstr="#F9A87B", GradientType=1 );
+}
