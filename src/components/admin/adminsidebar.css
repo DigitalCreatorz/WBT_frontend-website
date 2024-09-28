@@ -1,0 +1,94 @@
+.admin-sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: var(--orange);
+    color: white;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hidden */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  
+  .admin-sidebar.open {
+    left: 0; /* Shown when open */
+  }
+  
+  .sidebar-toggle {
+    background-color: rgb(16, 14, 11);
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    z-index: 1001;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .admin-sidebar h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: var(--black);
+    text-align: center;
+  }
+  
+  .admin-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    flex-direction: column;
+  }
+  
+  .admin-sidebar ul li {
+    display: flex;
+    margin: 15px 0;
+  }
+  
+  .admin-sidebar ul li a {
+    color: var(--black);
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .admin-sidebar ul li a:hover {
+    background-color: var(--orange);
+    color: var(--white);
+  }
+  
+  .admin-sidebar ul li a.active {
+    border-bottom: 2px solid #001e33;
+  }
+  
+  .toggle_container {
+    display: block; /* Visible on all screen sizes */
+    background-color: transparent;
+  }
+  
+  .sidebar-toggle {
+    background: none;
+    border: none;
+    color: var(--black);
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  @media (min-width: 769px) {
+    .toggle_container {
+      display: block; /* Ensure the toggle is still displayed on large screens */
+    }
+  
+    .admin-sidebar {
+      left: -250px; /* Still toggleable on large screens */
+    }
+  
+    .admin-sidebar.open {
+      left: 0; /* Open the sidebar on large screens too */
+    }
+  }
+  
