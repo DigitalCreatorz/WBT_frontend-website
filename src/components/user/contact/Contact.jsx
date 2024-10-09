@@ -40,9 +40,9 @@ function Contact() {
   };
   return (
     <>
-      <div className="container">
+      <div className="bg-yellow-300">
 
-        <div className="inquiry_contaciner">
+        <div className="inquiry_container">
 
         {showalert && (
             <div

@@ -1,0 +1,96 @@
+/* Container styling */
+.review-container {
+    position: relative;
+    padding: 100px 20px;
+    background-color: #f0f8ff;
+  }
+  
+  /* Heading styling */
+  .heading {
+    font-size: 190px;
+    margin-bottom: 50px;
+    color: #333;
+  }
+  
+  /* Testimonial card styling */
+  .testimonial-card {
+    position: relative;
+    width: 800px;
+    height: auto;
+    padding: 40px;
+    background:  rgba(255, 255, 255, 0.9); /* Black background */
+    color: #fff; /* White text */
+    border-radius: 0 50px 0 50px; /* Rounded top-right and bottom-left corners */
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    margin: auto; /* Center the card */
+    transition: border-radius 0.5s ease;
+    top: -405px;
+  }
+  
+  /* Quote icon styling */
+  .quote-icon-left, .quote-icon-right {
+    position: absolute;
+    font-size: 60px; /* Adjust icon size */
+    color: #ffc107; /* Yellow color for the icons */
+  }
+  
+  .quote-icon-left {
+    top: 30%; /* Position icon on the top-left side */
+    left: -30px; /* Move it outside the left border */
+  }
+  
+  .quote-icon-right {
+    top: 30%; /* Position icon on the top-left side */
+    right: -30px; /* Move it outside the left border */
+  }
+  
+  /* Testimonial content */
+  .testimonial-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .testimonial-image {
+    width: 100px; /* Adjust the width for smaller image */
+    height: 100px; /* Ensure a square image */
+    border-radius: 50%; /* Make the image circular */
+    border: 3px solid #ffc107; /* Optional border around image */
+    margin-top: -100px;
+  }
+  
+  .testimonial-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #ffc107; /* Yellow text color for name */
+  }
+  
+  .testimonial-desc {
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--black); /* Light grey text color for description */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .testimonial-card {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    .quote-icon-left, .quote-icon-right {
+      font-size: 40px; /* Smaller quote size for mobile */
+    }
+  
+    .testimonial-name {
+      font-size: 20px;
+    }
+  
+    .testimonial-desc {
+      font-size: 16px;
+    }
+  }
+  

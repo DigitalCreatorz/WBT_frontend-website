@@ -1,67 +1,350 @@
-/* .home_container {
-    display: flex;                    
-    height: 100vh;                   
-    overflow: hidden;  
-    background: url('/public/img/plane.mp4');
+/* home.css */
 
-    margin-top: 80px;             
+/* Base Styles */
+.home-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
-.subcontainer
-{
-    background: url('/img/plane.mp4');
-    color: aliceblue;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    border: 2px solid white;
-    margin: 45px;
-    padding: 25px;
-    height: 80%;
-    width: 100%;
-    border-radius: 15px;
+.continent-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+  padding: 50px;
+  text-align: left;
+  z-index: 1;
+}
+
+.left-section {
+  flex: 1;
+  padding: 20px;
+  z-index: 2; /* Make sure content appears above blurred background */
+}
+
+.continent-name {
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.continent-desc {
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+.right-section {
+  flex: 1.5;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+  z-index: 2; /* Ensure this section is above blurred background */
+}
+
+.photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  
+}
+
+.photo-item {
+  width: 235px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+  margin: 5px;
+  
+}
+
+.photo-item:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  border-radius: 10px;
+
+}
+
+.navigation-buttons {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 50px;
+  z-index: 3;
+}
+
+.nav-button {
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.nav-button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.continent-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Add dark overlay */
+  z-index: 1; /* Background should be below content */
+}
+
+.navigation-buttons {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+  width: 100%; 
+  z-index: 3;
+}
+
+.nav-button {
+  padding: 15px 15px; /* Increased padding for better clickability */
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 45%;
+  color: white;
+  font-size: 2rem; /* Increased font size for better visibility */
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin: 0 10px; /* Add margin between buttons */
+  display: flex; /* Align icons inside the button */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+
+.nav-button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+
+/* Container to position the image and overlay */
+.photo-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 10px;
+
+}
+
+/* .photo-item {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
 } */
 
+.photo-container:hover .photo-item {
+  transform: scale(1.05); 
+  border-radius: 10px;
 
+}
 
-/* Home.css */
+.photo-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  /* border-radius: 10px; */
 
-/* Container for the Home component */
-.home-container {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-  }
+}
+
+.photo-container:hover .photo-overlay {
+  opacity: 1; 
   
-  /* Style for the video container */
-  .video-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Send the video behind other content */
+}
+
+/* Title styling on the image */
+.photo-title {
+  color: var(--white);
+  font-size: 1.2rem;
+  padding-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+  .continent-section {
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
   }
-  
-  /* Style for the video itself */
-  .fullscreen-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Make the video cover the entire screen */
-  }
-  
-  /* Optional content styling */
-  .home-content {
-    position: relative;
-    z-index: 1; /* Bring content above the video */
-    color: white;
+
+  .left-section {
     text-align: center;
-    margin: 0;
-    top: 85%;
-    transform: translateY(-50%);
+    padding: 10px;
+  }
+
+  .continent-name {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+
+  .continent-desc {
+    font-size: 1em;
+  }
+
+  .right-section {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .photo-item {
+    width: 150px;
+    height: 250px;
+  }
+
+  .navigation-buttons {
+    padding: 0 20px;
+  }
+
+  .nav-button {
+    padding: 10px; /* Adjust padding for smaller screens */
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+
+  
+.photo-overlay {
+  position: absolute;
+  bottom: 14%;
+  border-radius: 10px;
+}
+
+.photo-container:hover .photo-overlay {
+  opacity: 1; 
+}
+
+/* Title styling on the image */
+.photo-title {
+ 
+  font-size: 1.6rem;
+  padding-bottom: 10px;
+}
+
+}
+
+@media only screen and (max-width: 480px) {
+  .continent-section {
+    /* border: 2px solid rebeccapurple; */
+    flex-direction: column;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 45px;
   }
   
+  .left-section {
+    text-align: center;
+    font-size: 26px;
+    padding-top: 95px;
+  }
+  
+  .continent-name {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+  }
+  
+  .continent-desc {
+    font-size: 0.9em;
+  }
+  
+  .right-section {
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+  }
+  .photo-item-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+  }
+  
+  
+  .photo-item {
+    /* border: 2px solid red; */
+    display: flex;
+    margin: auto;
+    margin-left: 10px;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    width: 100px;
+    height: 175px;
+    /* margin-left: 10px; */
+  }
+  
+  .navigation-buttons {
+    padding: 0 10px;
+  }
+  
+  .nav-button {
+    font-size: 1rem;
+    padding: 8px;
+  }
+  
+  .nav-button {
+    font-size: 1.2rem; /* Further adjust font size for mobile */
+  }
+  
+  .photo-overlay {
+    position: absolute;
+    bottom: 0%;
+    border-radius: 10px;
+  }
+
+  .photo-title {
+ 
+    font-size: 1.1rem;
+    padding-bottom: 10px;
+  }
+
+  .photo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    border-radius: 10px;
+  
+  }
+  .photo-item:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    border-radius: 15px;
+  
+  }
+  
+  
+}

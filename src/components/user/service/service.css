@@ -1,0 +1,173 @@
+/* service.css */
+
+/* General container styling */
+.service-container {
+    padding: 20px;
+    background-color: #f4f7fa; /* Light background color for contrast */
+  }
+  
+  /* Service header styling */
+  .service-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Center the service content */
+  .service-content {
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Service grid: Adjusted to create appropriate spacing */
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+    gap: 60px; /* Space between cards */
+    margin-top: 80px; /* Increase margin between rows to prevent overlapping */
+  }
+  
+  /* Styling for each service card */
+  .service-card {
+    position: relative;
+    background: white;
+    padding: 20px;
+    padding-top: 50px; /* Extra padding at the top for the overlapping image */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px; /* Set fixed width for smaller card size */
+    height: 300px; /* Set fixed height */
+    transition: transform 0.3s ease;
+  }
+  
+  /* Service card hover effect */
+  .service-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Circle image container */
+  .service-card-image {
+    position: absolute;
+    top: -30px; /* Adjust this value to control the overlap */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px; /* Smaller size for circle */
+    height: 80px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for the circle */
+  }
+  
+  /* Circle image styling */
+  .circle-image {
+    width: 100px; /* Adjust size as needed */
+    height: 80px; /* Adjust size as needed */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover;
+    border: 3px solid white; /* Optional border around image */
+  }
+  
+  /* Content styling inside each card */
+  .service-card-content {
+    margin-top: 20px; /* Reduce margin to fit smaller cards */
+  }
+  
+  /* Title styling */
+  .service-card-title {
+    
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Description styling */
+  .service-card-desc {
+    font-size: 12px;
+    color: #555;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1200px) {
+    /* For large tablets and small desktops */
+    .service-grid {
+      grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    }
+  
+    .service-card {
+      width: 300px; /* Adjust width for smaller screens */
+      height: 330px; /* Adjust height */
+    }
+  }
+  
+  @media (max-width: 992px) {
+    /* For tablets and medium screens */
+    .service-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+      gap: 30px; /* Adjust gap for smaller screens */
+    }
+  
+    .service-card {
+      width: 300px; /* Reduce width */
+      height: 330px; /* Reduce height */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    /* For small tablets and large phones */
+    .service-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+      gap: 20px; /* Smaller gap */
+    }
+  
+    .service-card {
+        margin-top: 15px;
+      width: 300px; /* Further reduce width */
+      height: 330px; /* Further reduce height */
+    }
+  
+    .service-card-image {
+      width: 70px;
+      height: 70px;
+    }
+  
+    .circle-image {
+      width: 60px;
+      height: 60px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    /* For mobile phones */
+    .service-grid {
+      grid-template-columns: repeat(1, 1fr); /* 1 card per row */
+      gap: 20px;
+    }
+  
+    .service-card {
+      width: 100%; /* Full width for mobile */
+      height: auto;
+    }
+  
+    .service-card-image {
+      width: 60px;
+      height: 60px;
+      top: -20px; /* Adjust overlap for mobile */
+    }
+  
+    .circle-image {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .service-card-title {
+      font-size: 14px;
+    }
+  
+    .service-card-desc {
+      font-size: 11px;
+    }
+  }
+  

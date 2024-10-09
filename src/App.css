@@ -3,14 +3,21 @@
 :root {
   --black: #000000;
   /* --black: #101010; */
-  --white: #000448;
+  --white: #FFFFFF;
+  --blue:#000448;
   --orange:#FFD14F;
+}
+
+::selection {
+  color: var(--blue);
+  background: var(--orange);
 }
 
 * {
   font-family: "widescreen", sans-serif;
   font-style: normal;
   cursor: url('/public/img/cursor.png'), auto; /* Make sure to include the fallback */
+  
 }
 
 

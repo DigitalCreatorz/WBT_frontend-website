@@ -74,7 +74,7 @@ function AdminContact() {
   if (error) return <div className="text-center text-red-500">{error}</div>;
 
   return (
-    <div className="inquiry_container mt-11 m-12">
+    <div className="inquiry_container mt-4 m-12">
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-2xl font-bold">Admin Contact List</h1>
         <button
